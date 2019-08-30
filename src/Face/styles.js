@@ -46,5 +46,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFE18F'
+  },
+  selected: {
+    borderColor: 'purple',
+    borderWidth: 1
   }
 });

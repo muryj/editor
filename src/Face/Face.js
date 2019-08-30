@@ -47,7 +47,6 @@ function Face() {
     setFiltered(filtered);
   }, [filter]);
 
-
   const renderNotes = () => (
     <View style={styles.listContainer}>
       <FlatList
@@ -81,12 +80,15 @@ function Face() {
   );
 
   const renderNote = (note) => (
-    <TouchableOpacity style={styles.note} onPress={() => {
-      Actions.editor({
-        note: { name: note.name, text: note.text, category: note.category },
-        title: `Note ${note.name}`
-      });
-    }}>
+    <TouchableOpacity
+      style={styles.note}
+      onPress={() => {
+        Actions.editor({
+          note: { name: note.name, text: note.text, category: note.category },
+          title: `Note ${note.name}`
+        });
+      }}
+    >
       <Text>{note.name}</Text>
     </TouchableOpacity>
   );
@@ -95,25 +97,25 @@ function Face() {
     <View style={styles.categoryContainer}>
       <Text>Filter:</Text>
       <TouchableOpacity
-        style={styles.category}
+        style={[styles.category, filter === 'all' && styles.selected]}
         onPress={() => setFilter('all')}
       >
         <Text>All</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.category}
+        style={[styles.category, filter === 'home' && styles.selected]}
         onPress={() => setFilter('home')}
       >
         <Text>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.category}
+        style={[styles.category, filter === 'work' && styles.selected]}
         onPress={() => setFilter('work')}
       >
         <Text>Work</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.category}
+        style={[styles.category, filter === 'sport' && styles.selected]}
         onPress={() => setFilter('sport')}
       >
         <Text>Sport</Text>

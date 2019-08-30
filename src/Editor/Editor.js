@@ -62,32 +62,65 @@ class Editor extends Component {
       <View style={styles.categoryContainer}>
         <Text>Category:</Text>
         <TouchableOpacity
-          style={styles.category}
-          onPress={() => this.setState({
-            ...this.state,
-            note: { ...this.state.note, category: 'home' }
-          })
-          }
+          style={[
+            styles.category,
+            this.state.note.category === 'home' && styles.selected
+          ]}
+          onPress={() => {
+            if (this.state.note.category === 'home') {
+              this.setState({
+                ...this.state,
+                note: { ...this.state.note, category: '' }
+              });
+            } else {
+              this.setState({
+                ...this.state,
+                note: { ...this.state.note, category: 'home' }
+              });
+            }
+          }}
         >
           <Text>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.category}
-          onPress={() => this.setState({
-            ...this.state,
-            note: { ...this.state.note, category: 'work' }
-          })
-          }
+          style={[
+            styles.category,
+            this.state.note.category === 'work' && styles.selected
+          ]}
+          onPress={() => {
+            if (this.state.note.category === 'work') {
+              this.setState({
+                ...this.state,
+                note: { ...this.state.note, category: '' }
+              });
+            } else {
+              this.setState({
+                ...this.state,
+                note: { ...this.state.note, category: 'work' }
+              });
+            }
+          }}
         >
           <Text>Work</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.category}
-          onPress={() => this.setState({
-            ...this.state,
-            note: { ...this.state.note, category: 'sport' }
-          })
-          }
+          style={[
+            styles.category,
+            this.state.note.category === 'sport' && styles.selected
+          ]}
+          onPress={() => {
+            if (this.state.note.category === 'sport') {
+              this.setState({
+                ...this.state,
+                note: { ...this.state.note, category: '' }
+              });
+            } else {
+              this.setState({
+                ...this.state,
+                note: { ...this.state.note, category: 'sport' }
+              });
+            }
+          }}
         >
           <Text>Sport</Text>
         </TouchableOpacity>
