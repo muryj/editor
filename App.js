@@ -7,7 +7,7 @@ console.disableYellowBox = true;
 const App = () => (
   <Router>
     <Stack key="root">
-      <Scene key="face" component={Face} title="Notes" initial />
+      <Scene key="face" component={Face} title="Notes" initial type="reset" />
       <Scene key="editor" component={Editor} title="Edit note" />
     </Stack>
   </Router>

@@ -84,7 +84,7 @@ function Face() {
     <TouchableOpacity style={styles.note} onPress={() => {
       Actions.editor({
         note: { name: note.name, text: note.text, category: note.category },
-        title: `Edit note ${note.name}`
+        title: `Note ${note.name}`
       });
     }}>
       <Text>{note.name}</Text>
